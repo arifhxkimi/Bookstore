@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cart - Online Bookstore</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+   <div class="page-container">
+    <!-- Header Section -->
+    <header>
+        <h1>Online Bookstore</h1>
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="books.html">Books</a>
+            <a href="cart.html" class="active">Cart</a>
+            <a href="login.html">Login</a>
+        </nav>
+        <input type="text" placeholder="Search books..." id="search-bar">
+    </header>
+
+    <section id="cart">
+        <table>
+            <thead>
+                <tr>
+                    <th>Book</th>
+                    <th>Quantity</th>
+                    <th>Price</th>
+                    <th>Total</th>
+                </tr>
+            </thead>
+            <tbody>
+                <!-- Cart items will go here -->
+            </tbody>
+        </table>
+        <p><b>Total:</b> $0.00</p>
+        <button onclick="checkout()">Proceed to Checkout</button>
+    </section>
+
+    <footer>
+        <p>&copy; 2024 Online Bookstore</p>
+    </footer>
+   </div>
+</body>
+</html>

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Online Bookstore</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+   <div class="page-container"> 
+    <header>
+        <h1>Online Bookstore</h1>
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="books.html">Books</a>
+            <a href="cart.html">Cart</a>
+            <a href="login.html">Login</a>
+        </nav>
+        <input type="text" placeholder="Search books..." id="search-bar">
+    </header>
+
+    <section id="featured-books">
+        <h2>Featured Books</h2>
+        <div class="book-grid">
+             <a href="book-detail.html?bookId=1">
+            <div class="book-card">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/7a/The_Great_Gatsby_Cover_1925_Retouched.jpg/634px-The_Great_Gatsby_Cover_1925_Retouched.jpg?20201214221805" alt="Book Cover">
+                
+                <h3>The Great Gatsby</h3>
+                 <p>$8.31</p>
+                <p>by F. Scott Fitzgerald</p>
+                <button onclick="addToCart('The Great Gatsby')">Add to Cart</button>
+            </div>
+             </a>
+                 
+            <a href="book-detail.html?bookId=1">
+            <div class="book-card">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT06JVQxvQtUTRwGCO3wuZUi8XO8vmecdWWMA&s" alt="Book Cover">
+                
+                <h3>1984</h3>
+                <p>by George Orwell</p>
+                 <p>$14.39</p>
+                <button onclick="addToCart('1984')">Add to Cart</button>
+            </div>
+            </a>    
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2024 Online Bookstore</p>
+    </footer>
+   </div>    
+</body>
+</html>

@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Page</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="page-container">
+    <header>
+        <h1>Online Bookstore - Admin Panel</h1>
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="admin.html">Admin Panel</a>
+        </nav>
+    </header>
+
+    <main id="admin-panel">
+        <!-- Sales Dashboard Section -->
+        <section id="dashboard">
+            <h2>Sales Dashboard</h2>
+            <div class="dashboard-cards">
+                <div class="card">
+                    <h3>Total Sales</h3>
+                    <p>RM 10,500</p> <!-- Replace with dynamic sales data -->
+                </div>
+                <div class="card">
+                    <h3>Total Orders</h3>
+                    <p>200</p> <!-- Replace with dynamic order data -->
+                </div>
+                <div class="card">
+                    <h3>Available Books</h3>
+                    <p>120</p> <!-- Replace with dynamic book availability data -->
+                </div>
+            </div>
+            <div class="chart">
+                <h3>Sales Over Time</h3>
+                <canvas id="sales-chart"></canvas> <!-- Placeholder for a sales chart -->
+            </div>
+        </section>
+
+        <h2>Manage Books</h2>
+
+        <!-- Add/Edit Book Form -->
+        <div class="form-container">
+            <h3>Add/Edit Book</h3>
+            <form id="admin-form">
+                <label for="book-title">Title:</label>
+                <input type="text" id="book-title" name="book-title" placeholder="Enter book title" required>
+
+                <label for="book-author">Author:</label>
+                <input type="text" id="book-author" name="book-author" placeholder="Enter author name" required>
+
+                <label for="book-price">Price (RM):</label>
+                <input type="number" id="book-price" name="book-price" placeholder="Enter price" required>
+
+                <label for="book-status">Availability:</label>
+                <select id="book-status" name="book-status">
+                    <option value="available">Available</option>
+                    <option value="out-of-stock">Out of Stock</option>
+                </select>
+
+                <button type="submit">Save Book</button>
+            </form>
+        </div>
+
+        <!-- Book List -->
+        <div id="book-list">
+            <h3>Current Books</h3>
+            <table>
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Title</th>
+                        <th>Author</th>
+                        <th>Price (RM)</th>
+                        <th>Availability</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>1</td>
+                        <td>The Great Gatsby</td>
+                        <td>F. Scott Fitzgerald</td>
+                        <td>30</td>
+                        <td>Available</td>
+                        <td>
+                            <button class="edit-btn">Edit</button>
+                            <button class="delete-btn">Delete</button>
+                        </td>
+                    </tr>
+                    <!-- Additional rows can be dynamically added here -->
+                </tbody>
+            </table>
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Online Bookstore</p>
+    </footer>
+    </div>
+
+    <!-- Add Chart.js (for sales chart) -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script>
+        // Example chart data, replace with actual dynamic data
+        const ctx = document.getElementById('sales-chart').getContext('2d');
+        const salesChart = new Chart(ctx, {
+            type: 'line',
+            data: {
+                labels: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun'], // Example months
+                datasets: [{
+                    label: 'Sales (RM)',
+                    data: [1000, 1500, 1200, 1800, 2200, 2500], // Example sales data
+                    borderColor: '#007bff',
+                    borderWidth: 2,
+                    fill: false
+                }]
+            },
+            options: {
+                responsive: true,
+                scales: {
+                    x: { beginAtZero: true },
+                    y: { beginAtZero: true }
+                }
+            }
+        });
+    </script>
+</body>
+</html>
